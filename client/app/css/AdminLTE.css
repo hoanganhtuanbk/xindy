@@ -1,16 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import url(//fonts.googleapis.com/css?family=Kaushan+Script);
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-/*!
- *   AdminLTE v1.2
- *   Author: AlmsaeedStudio.com
- *   License: Open source - MIT
- *           Please visit http://opensource.org/licenses/MIT for more information
-!*/
-/*
-    Core: General style
-----------------------------
-*/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 html,
 body {
   overflow-x: hidden!important;
@@ -20,7 +11,7 @@ body {
   background: #ffffff;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: lighter;
   color: #494c50;
 }

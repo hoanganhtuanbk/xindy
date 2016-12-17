@@ -32,6 +32,7 @@
       'ui.gravatar',
       'ui.grid',
       'ui.router',
+      'autofields',
       'toasty',
       'gettext',
       'angular-underscore/filters',
@@ -39,17 +40,15 @@
       'ui.select',
       'com.module.core',
       'com.module.about',
-      'com.module.browser',
       'com.module.events',
       'com.module.files',
-      'com.module.notes',
-      'com.module.pages',
       'com.module.posts',
       'com.module.products',
       'com.module.sandbox',
       'com.module.settings',
       'com.module.users',
-      'com.module.index'
+      'com.module.index',
+      'com.module.onetrip'
     ])
     .run(function ($rootScope, $cookies, gettextCatalog) {
 

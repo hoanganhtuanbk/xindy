@@ -1,8 +1,4 @@
-body {
-  font-family: "museo-sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: lighter;
-  color: #494c50;
-}
+
 
 .global-nav {
   height: 50px;
@@ -295,4 +291,155 @@ footer img {
 footer .copy {
   font-size: x-small;
   letter-spacing: 1px;
+}
+
+/* Onetrip slide */
+
+.cover-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.gray-bg {
+  background-color: #f7f7f7;
+}
+
+/* Adventure */
+@media (min-width: 768px){
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.tour-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+}
+.image-right .tour-content {
+  float: right;
+}
+.tour-content {
+  max-width: 650px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 40px;
+}
+.btn-more, .btn-more:hover, .btn-more:active, .btn-more:focus {
+  background-color: #F7A666;
+  color: white !important;
+}
+.more-link {
+  color: #BF7F4E;
+}
+.image-left .tour-content {
+  float: left;
+}
+
+/* Review Onetrip*/
+.reviews-block {
+  padding-bottom: 50px;
+}
+.title-big {
+  font-size: 32px;
+  font-weight: 500;
+}
+.title-sub {
+  font-size: 18px;
+  margin-top: .5em;
+  margin-bottom: 0;
+}
+
+.reviews-block .container-fluid {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+.review-wrap {
+  margin-bottom: 30px;
+}
+.review-wrap {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+.review-user {
+  text-align: right;
+}
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  min-width: 80px;
+  min-height: 80px;
+  background-size: cover;
+  display: block;
+}
+
+.avatar-review {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  min-width: auto;
+  min-height: auto;
+  display: inline-block;
+}
+.review-date {
+  font-size: 85%;
+  color: #999;
+  margin-top: 5px;
+}
+.ta-review .review-content {
+  padding: 0;
+  display: inline-block;
+  max-width: 600px;
+  border: 0px;
+}
+.review-tour-name {
+  font-size: 85%;
+  line-height: 90%;
+  color: #999;
+  margin-bottom: 15px;
+}
+.review-content {
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+.btn-outline {
+  border: 2px solid #555;
+  padding: 15px 25px;
+  line-height: 20px;
+  min-width: 150px;
+}
+.rating-wr {
+  margin: 20px 0;
+}
+.stars, .stars .rated-stars, .star-field-rated {
+  background: url('/images/rank/star.png') 0 -16px repeat-x;
+  background-size: 16px 32px;
+  height: 16px;
+  width: 80px;
+  display: inline-block;
+}
+.stars {
+  vertical-align: middle;
+}
+.reviewsOnetrip-container .carousel-control{
+  background: none;
+  width: 8%;
+}
+.stars .rated-stars, .star-field-rated {
+  background-position: 0 0!important;
+  float: left;
+}
+
+/* Share */
+.gallery-block, .gallery {
+  padding-bottom: 0;
+}
+.gallery-image {
+  min-height: 200px;
+  padding-top: 30%;
+  border: 1px solid #f9f9f9;
 }

@@ -6,8 +6,8 @@
   <hr class="after-heading" align="center">
 </div>
 <div style="height: 305px">
-  <div uib-carousel active="active" no-transition="false" interval="myInterval" no-wrap="noWrapSlides" class="row text-center reviews-container">
-    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+  <div carousel active="active" no-transition="false" interval="myInterval" no-wrap="noWrapSlides" class="row text-center reviews-container">
+    <div slide ng-repeat="slide in slides track by slide.id" index="slide.id">
       <div itemscope="" itemtype="http://schema.org/Review" class="col-xs-12">
 
         <img ng-src="{{slide.image}}">

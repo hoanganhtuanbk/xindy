@@ -26,11 +26,11 @@ angular
 	          },
 	          'onetrip_weoffer@onetrip': {
 	            templateUrl: 'modules/onetrip/views/onetrip_weoffer.html',
-	            controller: 'reviewOnetripCtrl'
+	            controller: ''
 	          },
             'onetrip_review@onetrip': {
               templateUrl: 'modules/onetrip/views/onetrip_review.html',
-              controller: ''
+              controller: 'reviewOnetripCtrl'
             },
             'onetrip_footer@onetrip': {
               templateUrl: 'modules/onetrip/views/onetrip_footer.html',

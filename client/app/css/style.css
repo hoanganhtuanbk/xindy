@@ -45,7 +45,12 @@ a, a:hover, a:visited {
   color: inherit;
   text-decoration: none;
 }
-
+.global-nav li span {
+  display: inline-block;
+}
+.global-nav li a {
+  display: inline-block;
+}
 /* Slides */
 .cover-container {
   position: relative;

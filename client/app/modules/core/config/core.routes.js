@@ -25,7 +25,7 @@
           templateUrl: 'modules/core/views/home.html',
           controller: 'HomeCtrl'
         });
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/');
     });
 
 })();

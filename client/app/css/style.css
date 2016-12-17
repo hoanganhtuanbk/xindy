@@ -1,53 +1,293 @@
 body {
-  background-color: #e8e8e8;
+  font-family: "museo-sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: lighter;
+  color: #494c50;
 }
 
-a {
-  color: #3285FF;
+.global-nav {
+  height: 50px;
+  padding-top: 5px;
+}
+.global-nav {
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+}
+.container {
+  max-width: 992px;
+}
+.global-nav ul {
+  width: 100%;
+  text-align: justify;
+  list-style-type: none;
+  padding: 0;
+  padding-top: 2px;
+}
+.global-nav ul:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+.global-nav li {
+  display: inline;
+  float: none;
+  font-size: 16px;
+  color: #333;
+  font-weight: 300;
+  margin-top: 3px;
+  text-align: justify;
+}
+.global-nav li a {
+  display: inline-block;
+}
+a, a:hover, a:visited {
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Slides */
+.cover-container {
+  position: relative;
+  height: 550px;
+  background-color: #ddd;
 }
-
-.background-image {
-background-image: url('https://api.url2png.com/v6/P4DF2F8BC83648/b33e4a22feea127c298456b1e8d7c1b9/png/?thumbnail_max_width=851&url=https%3A%2F%2Fwww.google.ca%2Fanalytics%2F%23%3Fmodal_active%3Dnone&viewport=1280x2000');
-  background-size: cover;
-filter: blur(3px) brightness(50%);
-  -webkit-filter: blur(3px) brightness(50%);
-  transform: scale(1.02);
-  -webkit-transform: scale(1.02);
-  -moz-transform: scale(1.02);
-  display: block;
-  height: 800px;
-  position: fixed;
+.cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+}
+.cover-container .va-container {
+  padding-top: 0;
+}
+.va-container {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.va-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.cover-heading {
+  color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  font-weight: bold;
+  text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+.cover .text-center{
+  height: 100%;
+}
+a.cover-button {
+  border-radius: 2px;
+  color: #fff;
+  padding: 15px 40px;
+  letter-spacing: 2px;
+  background-color: #e55664;
+  margin-bottom: 20px;
 }
 
-article {
-  background: rgba(255, 255, 255, 0.60);
-  border-radius: 3px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #222;
-  top: 20%;
-  width: 75%;
-  left: 0;
-  position: fixed;
-  margin: 0 auto;
-  text-align: left;
-  right: 0;
-  z-index: 2;
-  padding: 30px;
+/* Concept */
+.data-block {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-
 h1 {
-  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1.3;
+}
+.after-heading {
+  width: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 2px solid #494c50;
+}
+.concept-content {
+  max-width: 700px;
+  margin: auto;
+}
+p {
+  margin-bottom: 20px;
+}
+.concept-content img {
+  margin-top: 0;
+  width: 250px;
 }
 
-* {
-  box-sizing: border-box;
+/* Focus common space */
+@media (min-width: 992px){
+  .common-space-block .row {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.alternate-color {
+  background-color: #fafafa;
+}
+.common-space-block .row>div {
+  padding: 0;
+}
+@media (min-width: 992px){
+  .common-space-block h4 {
+    padding-top: 5px;
+  }
+}
+
+.common-space-block h4 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding-top: 25px;
+}
+@media (max-width: 991px), (min-width: 1050px){
+  .common-space-block hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.common-space-block hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.after-heading {
+  width: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 2px solid #494c50;
+}
+
+
+.common-space-content {
+  max-width: 500px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+@media (min-width: 992px){
+  .common-space-content {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 5px;
+    max-width: 400px;
+  }
+}
+.common-space-block .row>div {
+   padding: 0;
+ }
+.common-space-block img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Feature */
+.other-features-block .after-heading {
+  margin-bottom: 60px;
+}
+.other-features-block img {
+  width: 100%;
+}
+
+.feature-detail {
+  padding-bottom: 30px;
+}
+.feature-detail h4 {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Review  */
+
+.reviews-container img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 68px;
+  height: 68px;
+}
+.guest-name {
+  font-weight: bold;
+  font-size: medium;
+}
+.review-date {
+  margin-bottom: 20px;
+}
+.review-content {
+  max-width: 500px;
+  margin: auto;
+}
+.reviews-container .carousel-control{
+  background: none;
+  width: 50%;
+}
+.reviews-container .carousel-indicators{
+  display: none;
+}
+
+/* Achievements */
+.badge-block {
+  border-bottom: 1px solid #ddd;
+}
+.badge-item {
+  display: inline-block;
+  position: relative;
+  height: 170px;
+  width: 220px;
+  background: url(https://static.christinas.vn/images/badges/tripadvisor.png) no-repeat top center;
+  background-size: auto 340px;
+  margin: 25px 0;
+}
+.badge-number-one {
+  background-image: url(https://static.christinas.vn/images/badges/number-one.png);
+}
+.badge-superhost {
+  background-image: url(https://static.christinas.vn/images/badges/superhost.png);
+}
+.badge-item:hover{background-position:bottom center}
+
+/* Footer */
+footer {
+  padding-bottom: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+  line-height: 1.3em;
+  background-color: #fafafa;
+}
+footer {
+  padding-bottom: 20px;
+}
+footer .social {
+  margin-left: -10px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+footer .a-about-us {
+  padding-left: 15px;
+  line-height: 20px;
+  font-size: x-small;
+}
+footer .a-terms-policies {
+  padding-left: 15px;
+  line-height: 20px;
+  font-size: x-small;
+}
+footer a {
+  opacity: .7;
+}
+footer img {
+  height: 13px;
+  width: auto;
+  padding-left: 10px;
+  margin-top: -1px;
+}
+footer .copy {
+  font-size: x-small;
+  letter-spacing: 1px;
 }

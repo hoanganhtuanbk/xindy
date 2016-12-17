@@ -1,8 +1,10 @@
-<section ui-view="home_header"></section>
-<section id="tour"></section>
-<section id="dishes"></section>
-<section id="ssinfo" ui-view="home_infotour"></section>
-<section id="ss3slider" style="position: relative;max-width: 1336px;margin: auto;" ui-view="home_ss3slide"></section>
-<section id="show-info-tour" ui-view="home_ss2info"></section>
-<footer ui-view="home_weoffer"></footer>
+<div class="global-nav container-fluid" ui-view="home_header"></div>
+<section ui-view="home_infotour"></section>
+<div class="container-fluid data-block concept-block" ui-view="home_ss2info"></div>
+<div class="container-fluid data-block common-space-block" ui-view="home_ss3slide">
+</div>
+<div class="container-fluid data-block other-features-block" ui-view="home_weoffer"></div>
+<div class="container-fluid data-block alternate-color reviews-block" ui-view="home_review"></div>
+<div class="container-fluid data-block badge-block" ui-view="home_achievement"></div>
+<footer ui-view="home_footer"> </footer>
 

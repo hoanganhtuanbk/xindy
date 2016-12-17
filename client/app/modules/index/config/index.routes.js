@@ -5,7 +5,7 @@ angular
     $locationProvider.html5Mode(true);
     $stateProvider
       	.state('home', {
-        	url: '/home',
+        	url: '/',
 	        views:{
 	          '':{templateUrl :'modules/index/views/home.html'},
 	          'home_header@home':{
@@ -14,7 +14,7 @@ angular
 	          },
 	          'home_infotour@home': {
 	            templateUrl: 'modules/index/views/home_infotour.html',
-	            controller: ''
+	            controller: 'slideCtrl'
 	          },
 	          'home_ss3slide@home': {
 	            templateUrl: 'modules/index/views/home_ss3slide.html',
@@ -27,6 +27,18 @@ angular
 	          'home_weoffer@home': {
 	            templateUrl: 'modules/index/views/home_weoffer.html',
 	            controller: ''
-	          }
+	          },
+            'home_review@home': {
+              templateUrl: 'modules/index/views/home_review.html',
+              controller: 'reviewCtrl'
+            },
+            'home_achievement@home': {
+              templateUrl: 'modules/index/views/home_achievement.html',
+              controller: 'index'
+            },
+            'home_footer@home': {
+              templateUrl: 'modules/index/views/home_footer.html',
+              controller: 'index'
+            }
         }});
   });

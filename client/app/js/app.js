@@ -27,6 +27,7 @@
       'ngRoute',
       'ngSanitize',
       'ngTouch',
+      'ngMap',
       'ui.bootstrap',
       'ui.codemirror',
       'ui.gravatar',
@@ -40,7 +41,6 @@
       'ui.select',
       'com.module.core',
       'com.module.about',
-      'com.module.events',
       'com.module.files',
       'com.module.posts',
       'com.module.products',
@@ -48,7 +48,9 @@
       'com.module.settings',
       'com.module.users',
       'com.module.index',
-      'com.module.onetrip'
+      'com.module.onetrip',
+      'com.module.room'
+
     ])
     .run(function ($rootScope, $cookies, gettextCatalog) {
 

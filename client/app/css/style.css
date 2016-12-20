@@ -443,3 +443,41 @@ footer .copy {
   padding-top: 30%;
   border: 1px solid #f9f9f9;
 }
+
+/* room search  */
+.search-top .cities-wr {
+  margin-bottom: 20px;
+}
+.search-top .city-image {
+  padding-bottom: 120%;
+  background-size: cover;
+}
+.search-top .city-name-wr {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.search-top .city-name {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: large;
+}
+.search-bar .dropdown .caret {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+}
+.search-top .guest .dropdown-toggle .caret {
+  top: 14px;
+}
+.search-bar .dropdown-menu li {
+  padding: 5px 0;
+}

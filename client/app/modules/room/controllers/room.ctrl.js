@@ -46,75 +46,225 @@ angular
   })
 
   .controller('listRoom', function (NgMap,$scope,Home,HomesService) {
-    var styleMap = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}];
+    var styleMap = [
+      {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "hue": "#e9ebed"
+          },
+          {
+            "saturation": -78
+          },
+          {
+            "lightness": 67
+          }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "hue": "#ffffff"
+          },
+          {
+            "saturation": -100
+          },
+          {
+            "lightness": 100
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "hue": "#bbc0c4"
+          },
+          {
+            "saturation": -93
+          },
+          {
+            "lightness": 31
+          }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "off"
+          },
+          {
+            "hue": "#ffffff"
+          },
+          {
+            "saturation": -100
+          },
+          {
+            "lightness": 100
+          }
+        ]
+      },
+      {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "hue": "#e9ebed"
+          },
+          {
+            "saturation": -90
+          },
+          {
+            "lightness": -8
+          }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "on"
+          },
+          {
+            "hue": "#e9ebed"
+          },
+          {
+            "saturation": 10
+          },
+          {
+            "lightness": 69
+          }
+        ]
+      },
+      {
+        "featureType": "administrative.locality",
+        "elementType": "all",
+        "stylers": [
+          {
+            "visibility": "on"
+          },
+          {
+            "hue": "#2c2e33"
+          },
+          {
+            "saturation": 7
+          },
+          {
+            "lightness": 19
+          }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "on"
+          },
+          {
+            "hue": "#bbc0c4"
+          },
+          {
+            "saturation": -93
+          },
+          {
+            "lightness": 31
+          }
+        ]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "simplified"
+          },
+          {
+            "hue": "#bbc0c4"
+          },
+          {
+            "saturation": -93
+          },
+          {
+            "lightness": -2
+          }
+        ]
+      }
+    ];
+    var initCenter;
+    var map;
 
-    var getHomes = function () {
+    getHomes();
+
+    function getHomes() {
       return Home.find({
         filter: {
           order: 'created DESC'
         }
       },function (result) {
         $scope.homes = result;
+        initCenter = {
+          lat: result[0].lat,
+          lng: result[0].lng
+        };
+        initMap();
         console.log(result)
       }).$promise;
-    };
-    getHomes();
-    var map;
-    var pos;
+    }
+    var catchInfo = '';
     function initMap() {
-      $scope.changeMap = function (lat,lng) {
-        console.log(lng,lat);
+      $scope.changeMap = function (lat,lng,imageSrc,name) {
+        console.log(lng,lat,imageSrc);
+
         map.setCenter({
-          lat: parseInt(lat),
-          lng:parseInt(lng)
+          lat: lat,
+          lng:lng
         });
-        var marker = new google.maps.Marker({
-          position: {
-            lat: parseInt(lat),
-            lng:parseInt(lng)
-          },
-          map: map,
-          title: 'Hello World!'
+        var infowindow = new google.maps.InfoWindow({
+          content: '<div id="content"><p><strong>'+name +'</strong></p><img  class="img-infoMap" src="'+imageSrc+'" /> <br/></div>',
+          position : {
+            lat: lat,
+            lng:lng
+          }
         });
+        $scope.closeInfo = function () {
+          infowindow.close(map);
+          catchInfo = ''
+        };
+        // Hàm Open dùng để mở window
+        if(catchInfo !== name){
+          catchInfo = name;
+          infowindow.open(map);
+        }
       };
+
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 6,
+        center: initCenter,
+        zoom: 15,
         styles: styleMap
+
       });
-      var infoWindow = new google.maps.InfoWindow({map: map});
-
-      // Try HTML5 geolocation.
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          var marker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: 'Hello World!'
-          });
-          // infoWindow.setPosition(pos);
-          // infoWindow.setContent('Location found.');
-
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
-        });
-      } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-      }
 
     }
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-    }
-    initMap();
   })
 
   .controller('ss3slides', function () {

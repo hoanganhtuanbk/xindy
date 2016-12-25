@@ -72,7 +72,7 @@
           },
           {
             key: 'zone',
-            type: 'textarea',
+            type: 'input',
             templateOptions: {
               label: gettextCatalog.getString('Zone'),
               required: true
@@ -82,6 +82,7 @@
             key: 'price',
             type: 'input',
             templateOptions: {
+              type: 'number',
               label: gettextCatalog.getString('Price')
             }
           },
@@ -96,6 +97,7 @@
             key: 'numberReview',
             type: 'input',
             templateOptions: {
+              type: 'number',
               label: gettextCatalog.getString('Review')
             }
           },
@@ -103,6 +105,7 @@
             key: 'lng',
             type: 'input',
             templateOptions: {
+              type: 'number',
               label: gettextCatalog.getString('Lng')
             }
           },
@@ -110,6 +113,7 @@
             key: 'lat',
             type: 'input',
             templateOptions: {
+              type: 'number',
               label: gettextCatalog.getString('Lat')
             }
           },

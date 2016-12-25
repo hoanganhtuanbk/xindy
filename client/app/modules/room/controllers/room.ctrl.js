@@ -212,7 +212,7 @@ angular
     ];
     var initCenter;
     var map;
-
+    var infowindow;
     getHomes();
 
     function getHomes() {
@@ -239,18 +239,14 @@ angular
           lat: lat,
           lng:lng
         });
-        var infowindow = new google.maps.InfoWindow({
-          content: '<div id="content"><p><strong>'+name +'</strong></p><img  class="img-infoMap" src="'+imageSrc+'" /> <br/></div>',
+        infowindow = new google.maps.InfoWindow({
+          content: '<div id="content" ><p><strong>'+name +'</strong></p><img  class="img-infoMap" src="'+imageSrc+'" /> <br/></div>',
           position : {
             lat: lat,
             lng:lng
           }
         });
-        $scope.closeInfo = function () {
-          infowindow.close(map);
-          catchInfo = ''
-        };
-        // Hàm Open dùng để mở window
+
         if(catchInfo !== name){
           catchInfo = name;
           infowindow.open(map);
@@ -263,7 +259,14 @@ angular
         styles: styleMap
 
       });
-
+      $scope.closeInfo = function () {
+        infowindow.close(map);
+        catchInfo = ''
+      };
+      // google.maps.event.addListener(map, 'click', function() {
+      //   infowindow.close();
+      //   catchInfo = ''
+      // });
     }
   })
 

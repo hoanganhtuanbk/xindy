@@ -18,7 +18,7 @@ angular
 	          },
 	          'room_listRoom@room': {
 	            templateUrl: 'modules/room/views/room_listRoom.html',
-	            controller: 'listRoom as vm'
+	            controller: 'listRoom'
 	          },
 	          'room_weoffer@room': {
 	            templateUrl: 'modules/room/views/room_weoffer.html',

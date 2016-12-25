@@ -2,7 +2,6 @@
 angular
   .module('com.module.index')
   .controller('index', function () {
-
   })
   .controller('slideCtrl', function ($scope) {
     $scope.myInterval = 5000;

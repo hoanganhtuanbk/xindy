@@ -85,5 +85,9 @@
   "Meta": {
     "dataSource": "db",
     "public": true
+  },
+  "home": {
+    "dataSource": "db",
+    "public": true
   }
 }

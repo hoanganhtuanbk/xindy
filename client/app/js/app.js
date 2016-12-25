@@ -49,7 +49,8 @@
       'com.module.users',
       'com.module.index',
       'com.module.onetrip',
-      'com.module.room'
+      'com.module.room',
+      'com.module.homes'
 
     ])
     .run(function ($rootScope, $cookies, gettextCatalog) {

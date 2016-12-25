@@ -10,10 +10,10 @@ module.exports = function(app) {
   app.get('/login', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
-  app.get('/rooms/search', function(req, res) {
+  app.get('/rooms', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
-  app.get('/rooms/search/*', function(req, res) {
+  app.get('/rooms/search', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
   app.get('/register', function(req, res) {

@@ -492,9 +492,9 @@ footer .copy {
 .img-infoMap{
   width: 100px;
 }
-img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
-  display: none;
-}
+/*img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {*/
+  /*display: none;*/
+/*}*/
 .gm-style-iw{
   text-align: center;
 }

@@ -214,7 +214,6 @@ angular
     var map;
     var infowindow;
     getHomes();
-
     function getHomes() {
       return Home.find({
         filter: {
@@ -222,19 +221,34 @@ angular
         }
       },function (result) {
         $scope.homes = result;
+
         initCenter = {
           lat: result[0].lat,
           lng: result[0].lng
         };
         initMap();
-        console.log(result)
-      }).$promise;
+      }).$promise.then(function (success) {
+        console.log(success,$scope.homes)
+
+      });
     }
     var catchInfo = '';
     function initMap() {
-      $scope.changeMap = function (lat,lng,imageSrc,name) {
-        console.log(lng,lat,imageSrc);
+      function setLocaion() {
+        $scope.homes.map(function(location, i) {
+          console.log(location)
+          var marker =  new google.maps.Marker({
+            position: {
+              lng: location.lng,
+              lat: location.lat
+            },
+            map:map,
+            icon: 'images/home.png'
+          });
+        });
 
+      }
+      $scope.changeMap = function (lat,lng,imageSrc,name) {
         map.setCenter({
           lat: lat,
           lng:lng
@@ -257,16 +271,14 @@ angular
         center: initCenter,
         zoom: 15,
         styles: styleMap
-
       });
-      $scope.closeInfo = function () {
-        infowindow.close(map);
+
+      setLocaion();
+
+      google.maps.event.addListener(map, 'click', function() {
+        infowindow.close();
         catchInfo = ''
-      };
-      // google.maps.event.addListener(map, 'click', function() {
-      //   infowindow.close();
-      //   catchInfo = ''
-      // });
+      });
     }
   })
 

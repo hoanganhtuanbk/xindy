@@ -59,6 +59,7 @@
       };
 
       this.getFormFields = function (categories) {
+        console.log(categories)
         var catOptions = categories.map(function (category) {
           return {
             name: category.name,
@@ -84,17 +85,10 @@
             }
           },
           {
-            key: 'description',
+            key: 'urlImage',
             type: 'input',
             templateOptions: {
-              label: gettextCatalog.getString('Description')
-            }
-          },
-          {
-            key: 'price',
-            type: 'input',
-            templateOptions: {
-              label: gettextCatalog.getString('Price')
+              label: gettextCatalog.getString('Url Image')
             }
           }
         ];

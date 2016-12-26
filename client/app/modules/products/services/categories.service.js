@@ -12,6 +12,8 @@
               'products'
             ]
           }
+        },function (result) {
+          console.log(result)
         }).$promise;
       };
 

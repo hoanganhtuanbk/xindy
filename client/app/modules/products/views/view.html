@@ -15,5 +15,6 @@
   </div>
   <div class="panel-body">
     <pre>{{ctrl.product | json}}</pre>
+    <img ng-if="ctrl.product.urlImage" ng-src="{{ctrl.product.urlImage}}" alt="">
   </div>
 </div>

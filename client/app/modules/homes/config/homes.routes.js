@@ -35,7 +35,6 @@
             this.formOptions = {};
             this.data = {};
             this.getNameFileUpload = function (result) {
-              console.log(result);
               this.home.imageSrc = CoreService.env.apiUrl+'containers/files/download/'+result
             }
             this.uploader = new FileUploader({
@@ -64,10 +63,17 @@
           templateUrl: 'modules/homes/views/form.html',
           controllerAs: 'ctrl',
           controller: function ($state, HomesService, home,FileUploader, CoreService) {
-            console.log(home);
             this.home = home;
             this.formFields = HomesService.getFormFields();
             this.formOptions = {};
+            this.uploader = new FileUploader({
+              url: CoreService.env.apiUrl + '/containers/files/upload',
+              formData: [
+                {
+                  key: 'value'
+                }
+              ]
+            });
             this.submit = function () {
               HomesService.upsertHome(this.home).then(function () {
                 $state.go('^.list');

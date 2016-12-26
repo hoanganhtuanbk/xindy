@@ -36,7 +36,7 @@
             this.data = {};
             this.getNameFileUpload = function (result) {
               console.log(result);
-              this.home.imageSrc = 'http://0.0.0.0:3000/api//containers/files/download/'+result
+              this.home.imageSrc = CoreService.env.apiUrl+'containers/files/download/'+result
             }
             this.uploader = new FileUploader({
               url: CoreService.env.apiUrl + '/containers/files/upload',

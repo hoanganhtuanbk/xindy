@@ -1,0 +1,29 @@
+{
+  "name": "home",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "price": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object"
+    },
+    "src": {
+      "type": "string"
+    },
+    "zone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

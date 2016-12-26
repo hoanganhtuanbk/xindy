@@ -28,7 +28,7 @@
           controllerAs: 'ctrl',
           controller: function (FileUploader, CoreService) {
             this.uploader = new FileUploader({
-              url: CoreService.env.apiUrl + '/containers/files/upload',
+              url: CoreService.env.apiUrl + 'containers/files/upload',
               formData: [
                 {
                   key: 'value'

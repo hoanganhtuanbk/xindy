@@ -5,7 +5,7 @@
     .service('FileService', function ($http, CoreService, Setting, gettextCatalog) {
 
       this.find = function () {
-        return $http.get(CoreService.env.apiUrl + '/containers/files/files').success(function (res) {
+        return $http.get(CoreService.env.apiUrl + 'containers/files/files').success(function (res) {
           console.log(res.data);
           return res.data;
         });

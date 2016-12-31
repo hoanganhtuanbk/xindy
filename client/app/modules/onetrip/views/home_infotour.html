@@ -1,0 +1,11 @@
+<div uib-carousel class="cover-container" no-transition="false" active="active" interval="myInterval" no-wrap="noWrapSlides">
+  <div uib-slide ng-repeat="slide in slides track by slide.id" class="cover" index="slide.id" ng-style="{'height': '550px','background-image': 'url({{slide.image}})'}">
+      <div class="va-container">
+        <div class="va-middle text-center">
+          <h1 class="cover-heading text-uppercase large">Home is where<br>the hearts are...</h1>
+          <a href="/rooms/search/" class="cover-button text-uppercase btn-christinas">Book with us</a>
+        </div>
+      </div>
+  </div>
+</div>
+

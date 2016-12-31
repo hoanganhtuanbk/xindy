@@ -25,7 +25,7 @@ angular
 
 
   })
-  .controller('footerCtrl', function ($scope,$timeout) {
+  .controller('footerCtrl', function ($scope,$rootScope,$timeout) {
     $scope.showChat = false;
     $scope.close = false;
     $timeout(function () {
@@ -37,10 +37,14 @@ angular
     $scope.closeChat = function () {
       $scope.close = true;
     };
-    $scope.contentChat = [];
+    if( $rootScope.contentChat && $rootScope.contentChat.length > 0){
+
+    } else {
+      $rootScope.contentChat = [];
+    }
     $scope.submitChat = function (content) {
       $scope.value = '';
-      $scope.contentChat.push(content);
+      $rootScope.contentChat.push(content);
     };
   });
 

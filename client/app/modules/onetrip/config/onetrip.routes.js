@@ -33,7 +33,8 @@ angular
               controller: 'reviewOnetripCtrl'
             },
             'onetrip_footer@explore': {
-              templateUrl: 'modules/index/views/home_footer.html'
+              templateUrl: 'modules/index/views/home_footer.html',
+              controller: 'footerCtrl'
             }
         }})
       .state('detail', {
@@ -56,7 +57,7 @@ angular
           },
           'detail_footer@detail': {
             templateUrl: 'modules/index/views/home_footer.html',
-            controller: 'index'
+            controller: 'footerCtrl'
 
           }
         }

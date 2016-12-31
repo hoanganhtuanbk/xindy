@@ -41,7 +41,9 @@ angular
         views: {
           '': {templateUrl: 'modules/onetrip/views/detail/detail.html'},
           'detail_header@detail': {
-            templateUrl: 'modules/index/views/home_header.html'
+            templateUrl: 'modules/index/views/home_header.html',
+            controller: 'index'
+
           },
           'detail_banner@detail': {
             templateUrl: 'modules/onetrip/views/detail/detail_banner.html'
@@ -53,7 +55,9 @@ angular
             templateUrl: 'modules/onetrip/views/detail/detail_info.html'
           },
           'detail_footer@detail': {
-            templateUrl: 'modules/index/views/home_footer.html'
+            templateUrl: 'modules/index/views/home_footer.html',
+            controller: 'index'
+
           }
         }
       });

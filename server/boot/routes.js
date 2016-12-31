@@ -4,7 +4,10 @@ module.exports = function(app) {
   app.get('/', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
-  app.get('/onetrip', function(req, res) {
+  app.get('/explore', function(req, res) {
+    res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
+  });
+  app.get('/explore/*', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
   app.get('/login', function(req, res) {

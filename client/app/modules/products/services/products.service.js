@@ -74,22 +74,6 @@
               label: gettextCatalog.getString('Name'),
               required: true
             }
-          },
-          {
-            key: 'categoryId',
-            type: 'select',
-            templateOptions: {
-              label: gettextCatalog.getString('Category'),
-              required: true,
-              options: catOptions
-            }
-          },
-          {
-            key: 'urlImage',
-            type: 'input',
-            templateOptions: {
-              label: gettextCatalog.getString('Url Image')
-            }
           }
         ];
       };

@@ -13,40 +13,35 @@ angular
             'products'
           ],
           where:{
-            name: 'IndexSlide'
+            name: 'indexSlide'
           }
         }
       },function (result) {
         console.log(result);
         $scope.slides = result.products
       });
-      Category.findOne({
-        filter: {
-          order: 'created DESC',
-          include: [
-            'products'
-          ],
-          where:{
-            name: 'Concept'
-          }
-        }
-      },function (result) {
-        console.log(result);
-        $scope.concept = result.products
-      })
-    };
+    }
     getImage();
-  })
-  .controller('reviewCtrl', function ($scope) {
 
 
   })
-
-  .controller('ss2info', function () {
-
-  })
-
-  .controller('ss3slides', function () {
-
+  .controller('footerCtrl', function ($scope,$timeout) {
+    $scope.showChat = false;
+    $scope.close = false;
+    $timeout(function () {
+      $scope.showChat = true;
+    },5000);
+    $scope.hideChat = function () {
+      $scope.showChat = !$scope.showChat;
+    };
+    $scope.closeChat = function () {
+      $scope.close = true;
+    };
+    $scope.contentChat = [];
+    $scope.submitChat = function (content) {
+      $scope.value = '';
+      $scope.contentChat.push(content);
+    };
   });
+
 

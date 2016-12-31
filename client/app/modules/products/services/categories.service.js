@@ -69,10 +69,17 @@
         return [
           {
             key: 'name',
-            type: 'input',
+            type: 'select',
             templateOptions: {
               label: gettextCatalog.getString('Name'),
-              required: true
+              required: true,
+              options: [{
+                name: 'indexSlide',
+                value: 'indexSlide'
+              },{
+                name: 'exploreSlide',
+                value: 'exploreSlide'
+              }]
             }
           }
         ];

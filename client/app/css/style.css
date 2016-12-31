@@ -443,6 +443,17 @@ footer .copy {
   padding-top: 30%;
   border: 1px solid #f9f9f9;
 }
+/* detail */
+
+.data-block-half {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+h3 {
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 
 /* room search  */
 .search-top .cities-wr {

@@ -38,7 +38,7 @@ angular
             },
             'home_footer@home': {
               templateUrl: 'modules/index/views/home_footer.html',
-              controller: 'index'
+              controller: 'footerCtrl'
             }
         }});
   });

@@ -4,28 +4,27 @@ angular
   .controller('onetrip', function () {
 
   })
-  .controller('TripCtrl', function ($scope) {
+  .controller('TripCtrl', function ($scope,Category) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
-    $scope.slides = [
-      {
-        image: 'images/onetrip/1.jpg',
-        id: 0
-      },
-      {
-        image: 'images/onetrip/2.jpg',
-        id: 1
-      },
-      {
-        image: 'images/onetrip/3.jpg',
-        id: 2
-      },
-      {
-        image: 'images/onetrip/4.jpg',
-        id: 3
-      }
-    ];
+    function getImage() {
+      Category.findOne({
+        filter: {
+          order: 'created DESC',
+          include: [
+            'products'
+          ],
+          where:{
+            name: 'exploreSlide'
+          }
+        }
+      },function (result) {
+        console.log(result);
+        $scope.slides = result.products
+      });
+    }
+    getImage();
 
 })
   .controller('reviewOnetripCtrl', function ($scope) {

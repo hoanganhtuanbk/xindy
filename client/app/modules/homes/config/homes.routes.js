@@ -34,19 +34,16 @@
             this.formFields = HomesService.getFormFields();
             this.formOptions = {};
             this.data = {};
-            this.getNameFileUpload = function (result) {
-              this.home.imageSrc = CoreService.env.apiUrl+'containers/files/download/'+result
-            }
             this.uploader = new FileUploader({
-              url: CoreService.env.apiUrl + '/containers/files/upload',
+              url: CoreService.env.apiUrl + 'containers/files/upload',
               formData: [
                 {
                   key: 'value'
                 }
               ]
             });
-            console.log(this.uploader)
             this.submit = function () {
+              this.home.imageSrc = CoreService.env.apiUrl + 'containers/files/download/' +this.uploader.queue[0].file.name;
               HomesService.upsertHome(this.home).then(function () {
                 $state.go('^.list');
               });
@@ -75,6 +72,11 @@
               ]
             });
             this.submit = function () {
+              try{
+                this.home.imageSrc = CoreService.env.apiUrl + 'containers/files/download/' +this.uploader.queue[0].file.name;
+              } catch (e){
+
+              }
               HomesService.upsertHome(this.home).then(function () {
                 $state.go('^.list');
               });

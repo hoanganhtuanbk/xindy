@@ -3,10 +3,10 @@
     <div class="col-sm-12 col-md-7 col-xs-12" style="padding-right:5px;">
       <div class="container-fluid search-result" >
         <div class="row">
-          <div class="col-sm-6 col-xs-12" ng-repeat="item in homes" style="padding-right:5px;" ng-mouseenter="changeMap(item.lat,item.lng,item.imageSrc,item.name)" >
+          <div class="col-sm-6 col-xs-12" ng-repeat="item in homes" style="padding-right:5px;" ng-mouseenter="showMarker(item.lat,item.lng,item.imageSrc,item.name)" ng-mouseleave="hideMarker()">
             <div>
               <div style="position:relative;">
-                <div style="padding-bottom:67%;" >
+                <div style="padding-bottom:67%" >
                 </div>
                 <a target="_blank" href="{{item.url}}" style="display:block;width:100%;" >
                   <div ng-style="{'background-image':'url({{item.imageSrc}})'}" style="background-size:cover;background-position:center bottom;background-repeat:no-repeat;width:auto;height:100%;position:absolute;top:0;bottom:0;left:0;right:0;" >

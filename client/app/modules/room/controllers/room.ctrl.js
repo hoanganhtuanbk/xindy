@@ -1,51 +1,14 @@
 'use strict';
 angular
   .module('com.module.room')
-  .controller('room', function () {
-
+  .controller('room', function ($scope,$rootScope) {
+    $scope.selectLocation = 'DN';
+    $scope.changeLocation = function (zone) {
+      $scope.selectLocation = zone;
+      $rootScope.configHome(zone);
+    };
   })
-  .controller('slideCtrl', function ($scope) {
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
-    $scope.slides = [
-      {
-        image: 'images/slide/1.jpg',
-        id: 0
-      },
-      {
-        image: 'images/slide/2.jpg',
-        id: 1
-      },
-      {
-        image: 'images/slide/5.jpg',
-        id: 2
-      }
-    ];
-
-})
-  .controller('reviewCtrl', function ($scope) {
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
-    $scope.slides = [
-      {
-        image: 'images/man/man1.jpg',
-        id: 0
-      },
-      {
-        image: 'images/man/man2.jpg',
-        id: 1
-      },
-      {
-        image: 'images/man/man3.jpg',
-        id: 2
-      }
-    ];
-
-  })
-
-  .controller('listRoom', function (NgMap,$scope,Home,HomesService) {
+  .controller('listRoom', function (NgMap,$scope,$rootScope,Home,HomesService) {
     var styleMap = [
       {
         "featureType": "water",
@@ -212,77 +175,162 @@ angular
     ];
     var initCenter;
     var map;
-    var infowindow;
-    getHomes();
-    function getHomes() {
-      return Home.find({
+    var marker;
+    $rootScope.configHome = function (zone) {
+      Home.find({
         filter: {
-          order: 'created DESC'
+          order: 'created DESC',
+          where:{
+            zone: zone
+          }
         }
       },function (result) {
         $scope.homes = result;
-
         initCenter = {
           lat: result[0].lat,
           lng: result[0].lng
         };
         initMap();
-      }).$promise.then(function (success) {
-        console.log(success,$scope.homes)
-
       });
-    }
-    var catchInfo = '';
+    };
+    $rootScope.configHome('DN');
     function initMap() {
-      function setLocaion() {
-        $scope.homes.map(function(location, i) {
-          console.log(location)
-          var marker =  new google.maps.Marker({
-            position: {
-              lng: location.lng,
-              lat: location.lat
-            },
-            map:map,
-            icon: 'images/home.png'
-          });
-        });
-
-      }
-      $scope.changeMap = function (lat,lng,imageSrc,name) {
-        map.setCenter({
-          lat: lat,
-          lng:lng
-        });
-        infowindow = new google.maps.InfoWindow({
-          content: '<div id="content" ><p><strong>'+name +'</strong></p><img  class="img-infoMap" src="'+imageSrc+'" /> <br/></div>',
-          position : {
-            lat: lat,
-            lng:lng
-          }
-        });
-
-        if(catchInfo !== name){
-          catchInfo = name;
-          infowindow.open(map);
-        }
-      };
-
       var map = new google.maps.Map(document.getElementById('map'), {
         center: initCenter,
         zoom: 15,
-        styles: styleMap
+        styles: [{
+          "featureType": "landscape.natural",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "color": "#e0efef"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "hue": "#1900ff"
+          }, {
+            "color": "#c0e8e8"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [{
+            "lightness": 100
+          }, {
+            "visibility": "simplified"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "lightness": 700
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "all",
+          "stylers": [{
+            "color": "#7dcdcd"
+          }]
+        }]
       });
 
-      setLocaion();
+        $scope.homes.map(function (markerData, i) {
+          var latLng = new google.maps.LatLng(markerData.lat, markerData.lng);
+          marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            icon: 'images/home.png'
+          });
 
-      google.maps.event.addListener(map, 'click', function() {
-        infowindow.close();
-        catchInfo = ''
-      });
+          var infowindow = new google.maps.InfoWindow({
+            content: '<div id="iw-container" ><div class="iw-title"><p>'+markerData.name+'</p></div>'+
+            '<img  class="iw-img" src="' + markerData.imageSrc + '" /></div>',
+            position: {
+              lat: markerData.lat,
+              lng: markerData.lng
+            }
+          });
+          $scope.showMarker = function (lat, lng,url,name) {
+           infowindow = new google.maps.InfoWindow({
+              content: '<div id="iw-container" ><div class="iw-title"><p>'+name+'</p></div>'+
+              '<img  class="iw-img" src="' +url + '" /></div>',
+              position: {
+                lat: lat,
+                lng: lng
+              }
+            });
+            infowindow.open(map);
+            map.setCenter({
+              lat: lat,
+              lng: lng
+            });
+            google.maps.event.addListener(infowindow, 'domready', function() {
+
+              // Reference to the DIV which receives the contents of the infowindow using jQuery
+              var iwOuter = $('.gm-style-iw');
+
+              /* The DIV we want to change is above the .gm-style-iw DIV.
+               * So, we use jQuery and create a iwBackground variable,
+               * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
+               */
+              var iwBackground = iwOuter.prev();
+              iwOuter.parent().parent().css({top: '-20px'});
+              // Remove the background shadow DIV
+              iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+
+              // Remove the white background DIV
+              iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+            });
+            $scope.hideMarker = function () {
+              infowindow.close();
+            };
+          }
+
+          google.maps.event.addListener(infowindow, 'domready', function() {
+
+            // Reference to the DIV which receives the contents of the infowindow using jQuery
+            var iwOuter = $('.gm-style-iw');
+
+            /* The DIV we want to change is above the .gm-style-iw DIV.
+             * So, we use jQuery and create a iwBackground variable,
+             * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
+             */
+            var iwBackground = iwOuter.prev();
+
+            // Remove the background shadow DIV
+            iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+
+            // Remove the white background DIV
+            iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+          });
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, this);
+          });
+          google.maps.event.addListener(map, 'click', function () {
+            infowindow.close();
+          });
+          google.maps.event.addListener(marker, 'mouseout', function () {
+            infowindow.close();
+          });
+
+        });
+
     }
-  })
 
-  .controller('ss3slides', function () {
 
   });
+
 

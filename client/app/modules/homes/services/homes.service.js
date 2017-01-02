@@ -72,10 +72,18 @@
           },
           {
             key: 'zone',
-            type: 'input',
+            type: 'select',
             templateOptions: {
               label: gettextCatalog.getString('Zone'),
-              required: true
+              required: true,
+              options: [{
+                name: 'Da Nang',
+                value: 'DN'
+              },
+                {
+                  name:'Hoi An',
+                  value: 'HA'
+                }]
             }
           },
           {

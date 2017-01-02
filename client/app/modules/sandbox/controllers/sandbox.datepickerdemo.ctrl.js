@@ -3,6 +3,10 @@
   angular
     .module('com.module.sandbox')
     .controller('DatepickerDemoCtrl', function ($scope) {
+      $scope.FuncShowData = function () {
+        $scope.showDate = !$scope.showDate
+      }
+      $scope.showDate = false;
       $scope.today = function () {
         $scope.dt = new Date();
       };

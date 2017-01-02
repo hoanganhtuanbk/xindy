@@ -500,12 +500,76 @@ h3 {
 #map img {
   max-width: none!important;
 }
-.img-infoMap{
-  width: 100px;
+.iw-img{
+  width: 100%;
 }
-/*img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {*/
-  /*display: none;*/
-/*}*/
-.gm-style-iw{
+#iw-container {
+  background: white;
+  overflow: hidden;
+}
+.iw-title{
+  padding-top: 10px;
   text-align: center;
+  padding-bottom: -5px;
+}
+.iw-title p {
+  margin-bottom: 10px!important;
+}
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+  display: none;
+}
+
+.gm-style-iw {
+  width: 200px !important;
+  top: 15px !important;
+  left: 0 !important;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+  border: 1px solid rgba(72, 181, 233, 0.6);
+  border-radius: 2px 2px 0 0;
+}
+.gm-style-iw div:first-child{
+  overflow: hidden;
+}
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+/* .datpicker .text-info contains text for today's date but
+   it dosn't work when we are not showing the current month */
+.datepicker .text-info {
+  font-size: 14px;
+  color: black;
+}
+/* .datpicker .btn-info contains selected date */
+.datepicker .btn-info {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #39b3d7;
+}
+.datepicker .btn:disabled  {
+  font-size: 14px;
+  font-weight: normal;
+  color: gray;
+}
+.datepicker .btn:disabled>.text-muted  {
+  font-size: 14px;
+  font-weight: normal;
+  color: gray;
+}
+.datepicker .text-muted  {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.datepicker .btn:enabled  {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
 }

@@ -31,32 +31,32 @@
                 <th translate>Status</th>
                 <th translate>Actions</th>
               </tr>
-              <tr ng-repeat="item in ctrl.uploader.queue">
-                <td><strong>{{ item.file.name }}</strong>
+              <tr>
+                <td><strong>{{ ctrl.uploader.queue[0].file.name }}</strong>
                 </td>
-                <td ng-show="ctrl.uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB
+                <td ng-show="ctrl.uploader.isHTML5" nowrap>{{ ctrl.uploader.queue[0].file.size/1024/1024|number:2 }} MB
                 </td>
                 <td ng-show="ctrl.uploader.isHTML5">
                   <div class="progress" style="margin-bottom: 0;">
-                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': ctrl.uploader.queue[0].progress + '%' }"></div>
                   </div>
                 </td>
                 <td class="text-center">
-                  <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                  <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-                  <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                  <span ng-show="ctrl.uploader.queue[0].isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                  <span ng-show="ctrl.uploader.queue[0].isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                  <span ng-show="ctrl.uploader.queue[0].isError"><i class="glyphicon glyphicon-remove"></i></span>
                 </td>
                 <td nowrap>
                   <div class="input-group pull-right btn-group btn-group-xs">
-                    <button type="button" class="btn btn-success btn-xs" ng-click="item.upload();ctrl.getNameFileUpload(item.file.name)"
-                            ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="ctrl.uploader.queue[0].upload()"
+                            ng-disabled="ctrl.uploader.queue[0].isReady || ctrl.uploader.queue[0].isUploading || ctrl.uploader.queue[0].isSuccess">
                       <span class="glyphicon glyphicon-upload"></span>
                     </button>
-                    <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()"
-                            ng-disabled="!item.isUploading">
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="ctrl.uploader.queue[0].cancel()"
+                            ng-disabled="!ctrl.uploader.queue[0].isUploading">
                       <span class="glyphicon glyphicon-ban-circle"></span>
                     </button>
-                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="ctrl.uploader.queue[0].remove()">
                       <span class="glyphicon glyphicon-trash"></span>
                     </button>
                   </div>
@@ -95,23 +95,14 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div>
-              <label class="control-label">
-                Image Url
-                *
-              </label>
-              <input class="form-control" type="text" ng-model="ctrl.home.imageSrc" disabled>
+
+            <div ng-if="ctrl.home.imageSrc">
               <img ng-src="{{ctrl.home.imageSrc}}" alt="">
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
-
     <div class="panel-footer">
       <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
         Submit

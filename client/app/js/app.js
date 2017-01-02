@@ -43,6 +43,7 @@
       'com.module.about',
       'com.module.files',
       'com.module.posts',
+      'com.module.tours',
       'com.module.products',
       'com.module.sandbox',
       'com.module.settings',

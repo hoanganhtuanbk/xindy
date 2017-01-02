@@ -89,5 +89,9 @@
   "home": {
     "dataSource": "db",
     "public": true
+  },
+  "Tour": {
+    "dataSource": "db",
+    "public": true
   }
 }

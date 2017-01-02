@@ -16,11 +16,10 @@ angular
 	            controller: 'index'
 	          },
 	          'home_focus@home': {
-	            templateUrl: 'modules/index/views/home_focus.html',
+	            templateUrl: 'modules/index/views/home_focus.html'
 	          },
 	          'home_concept@home': {
-	            templateUrl: 'modules/index/views/home_concept.html',
-	            controller: 'ss2info'
+	            templateUrl: 'modules/index/views/home_concept.html'
 	          },
 	          'home_feature@home': {
 	            templateUrl: 'modules/index/views/home_feature.html'

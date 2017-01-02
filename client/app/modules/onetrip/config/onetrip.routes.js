@@ -17,12 +17,10 @@ angular
 	            controller: 'TripCtrl'
 	          },
 	          'onetrip_ss3slide@explore': {
-	            templateUrl: 'modules/onetrip/views/onetrip_ss3slide.html',
-	            controller: 'ss3slides'
+	            templateUrl: 'modules/onetrip/views/onetrip_ss3slide.html'
 	          },
 	          'onetrip_ss2info@explore': {
-	            templateUrl: 'modules/onetrip/views/onetrip_ss2info.html',
-	            controller: 'ss2info'
+	            templateUrl: 'modules/onetrip/views/onetrip_ss2info.html'
 	          },
 	          'onetrip_weoffer@explore': {
 	            templateUrl: 'modules/onetrip/views/onetrip_weoffer.html',
@@ -38,28 +36,31 @@ angular
             }
         }})
       .state('detail', {
-        url: '/explore/hoian',
+        url: '/explore/:text',
         views: {
           '': {templateUrl: 'modules/onetrip/views/detail/detail.html'},
           'detail_header@detail': {
             templateUrl: 'modules/index/views/home_header.html',
             controller: 'index'
-
           },
           'detail_banner@detail': {
-            templateUrl: 'modules/onetrip/views/detail/detail_banner.html'
+            templateUrl: 'modules/onetrip/views/detail/detail_banner.html',
+            controller: 'detail'
           },
           'detail_main@detail': {
-            templateUrl: 'modules/onetrip/views/detail/detail_main.html'
+            templateUrl: 'modules/onetrip/views/detail/detail_main.html',
+            controller: 'detail'
           },
           'detail_info@detail': {
-            templateUrl: 'modules/onetrip/views/detail/detail_info.html'
+            templateUrl: 'modules/onetrip/views/detail/detail_info.html',
+            controller: 'detail'
           },
           'detail_footer@detail': {
             templateUrl: 'modules/index/views/home_footer.html',
             controller: 'footerCtrl'
 
           }
-        }
+        },
+        component: 'hello'
       });
   });

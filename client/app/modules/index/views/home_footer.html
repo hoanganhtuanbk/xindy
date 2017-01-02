@@ -17,12 +17,11 @@
     </div>
   </div>
 
-  <div style="width: 300px;position: fixed;bottom: 0;right: 30px" ng-style="close == true ? {'display':'none'} : null">
+  <div style="width: 280px;position: fixed;bottom: -20px;right: 30px" ng-style="close == true ? {'display':'none'} : null">
     <div class="box box-danger direct-chat direct-chat-danger">
       <div class="box-header with-border" ng-style="showChat == true ? {'border-bottom': '1px solid #f4f4f4'}: {'border-bottom': 'none'}">
-        <h3 class="box-title">Direct Chat</h3>
+        <h3 class="box-title">Chat with us</h3>
         <div class="box-tools pull-right">
-          <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">{{contentChat.length}}</span>
           <button type="button" class="btn btn-box-tool" ng-click="hideChat()">
             <i ng-show="showChat == true" class="fa fa-minus"></i>
             <i ng-show="showChat == false" class="fa fa-plus"></i>

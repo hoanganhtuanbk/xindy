@@ -8,23 +8,21 @@ angular
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
-    function getImage() {
-      Category.findOne({
-        filter: {
-          order: 'created DESC',
-          include: [
-            'products'
-          ],
-          where:{
-            name: 'exploreSlide'
-          }
+
+    Category.findOne({
+      filter: {
+        order: 'created DESC',
+        include: [
+          'products'
+        ],
+        where:{
+          name: 'exploreSlide'
         }
-      },function (result) {
-        console.log(result);
-        $scope.slides = result.products
-      });
-    }
-    getImage();
+      }
+    },function (result) {
+      console.log(result);
+      $scope.slides = result.products
+    });
 
 })
   .controller('reviewOnetripCtrl', function ($scope) {
@@ -48,11 +46,19 @@ angular
 
   })
 
-  .controller('ss2info', function () {
 
-  })
+  .controller('detail', function ($scope,$stateParams,Tour){
+    $scope.data = {};
+    Tour.findOne({
+      filter:{
+        where:{
+          title: $stateParams.text
+        }
+      }
 
-  .controller('ss3slides', function () {
-
+    },function (result) {
+      $scope.data = result;
+      console.log(result)
+    })
   });
 

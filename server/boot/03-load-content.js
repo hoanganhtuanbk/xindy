@@ -85,12 +85,8 @@ module.exports = function (app) {
 
     Tour.findOrCreate({where:{title: 'Tour example'}},{
         title: 'Tour example'
-      },function (err, category, created) {
-        if (err) {
-          console.error('err', err);
-        }
-        (created) ? log('created Tour', category.title)
-          : log('found Tour', category.title);
+      },function (err, tour, created) {
+        console.log(err,created)
       }
     )
   }

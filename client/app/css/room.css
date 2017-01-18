@@ -5,4 +5,8 @@
   position: fixed;
   right: 25px;
   bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.changeMap{
+  height: 96vh!important;
 }

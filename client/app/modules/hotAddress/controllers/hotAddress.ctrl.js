@@ -257,7 +257,18 @@ angular
 
     }
     initMap();
-
+    $scope.changeStyle = false;
+    $(window).scroll(function(){
+      if($(document).scrollTop() > 20)
+      {
+        $scope.changeStyle = true;
+        console.log(1)
+      }
+      else
+      {
+        $scope.changeStyle = false
+      }
+    });
 
   });
 

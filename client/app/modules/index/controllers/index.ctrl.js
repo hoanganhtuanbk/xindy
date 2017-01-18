@@ -2,9 +2,7 @@
 angular
   .module('com.module.index')
   .controller('index', function ($scope,Category) {
-    $scope.myInterval = 3000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
+    $scope.myInterval = 4000;
     function getImage() {
       Category.findOne({
         filter: {
@@ -46,10 +44,10 @@ angular
   })
   .controller('footerCtrl', function ($scope,$rootScope,$timeout) {
     $scope.showChat = false;
-    $scope.close = false;
-    $timeout(function () {
-      $scope.showChat = true;
-    },10000);
+    $scope.close = true;
+    // $timeout(function () {
+    //   $scope.showChat = true;
+    // },10000);
     $scope.hideChat = function () {
       $scope.showChat = !$scope.showChat;
     };

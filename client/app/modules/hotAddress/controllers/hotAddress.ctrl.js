@@ -1,14 +1,8 @@
 'use strict';
 angular
-  .module('com.module.room')
-  .controller('room', function ($scope,$rootScope) {
-    $scope.selectLocation = 'DN';
-    $scope.changeLocation = function (zone) {
-      $scope.selectLocation = zone;
-      $rootScope.configHome(zone);
-    };
-  })
-  .controller('listRoom', function (NgMap,$scope,$rootScope,Home,HomesService) {
+  .module('com.module.hotAddress')
+
+  .controller('hotAddress', function (NgMap,$scope,$rootScope,Home,HomesService) {
     var styleMap = [
       {
         "featureType": "poi",
@@ -71,35 +65,116 @@ angular
         ]
       }
     ];
-    var initCenter;
     var map;
     var marker;
-    $rootScope.configHome = function (zone) {
-      Home.find({
-        filter: {
-          order: 'created DESC',
-          where:{
-            zone: zone
-          }
-        }
-      },function (result) {
-        $scope.homes = result;
-        initCenter = {
-          lat: result[0].lat,
-          lng: result[0].lng
-        };
-        initMap();
-      });
-    };
-    $rootScope.configHome('DN');
+    $scope.address = [{
+      name: 'Madame Lan Restaurant',
+      location: '4 Bạch Đằng, Thạch Thang, Đà Nẵng, Thạch Thang Q. Hải Châu Đà Nẵng',
+      type: 'Restaurant',
+      imageSrc: 'images/common-space/1.jpg',
+      lat: 16.081449,
+      lng: 108.223255
+    },{
+      name: 'Runam Bistro',
+      lcation: '22 - 24 Bạch Đằng, Quận Hải Châu, Đà Nẵng',
+      type: 'Restaurant',
+      imageSrc: 'images/common-space/2.jpg',
+      lat: 16.079497,
+      lng: 108.223715
+    },{
+      name: 'Banh Canh Nga (Local Noodles) ',
+      lcation: '78 Nguyen Chi Thanh, Hải Châu 1, Hải Châu, Da Nang',
+      type: 'Restaurant',
+      imageSrc: 'images/common-space/3.jpg',
+      lat: 16.074409,
+      lng: 108.220840
+    },{
+      name: 'Boulevard Gelato and Coffee',
+      lcation: '77 Trần Quốc Toản, Hải Châu District, Da Nang',
+      type: 'Café and Desserts',
+      imageSrc: 'images/common-space/4.jpg',
+      lat: 16.066222,
+      lng: 108.221008
+    },{
+      name: 'Cong Café ',
+      lcation: '96-98 Bạch Đằng, Hải Châu, Đà Nẵng',
+      type: 'Café and Desserts',
+      imageSrc: 'images/common-space/5.jpg',
+      lat: 16.069165,
+      lng: 108.224856
+    },{
+      name: 'Memory Lounge',
+      lcation: '07 Bạch Đằng, Hải Châu 1, Hải Châu, Đà Nẵng ',
+      type: 'Café and Desserts',
+      imageSrc: 'images/common-space/6.jpg',
+      lat: 16.071640,
+      lng: 108.225124
+    },{
+      name: 'Dừa Bến Tre (Desserts)',
+      lcation: '196 Bạch Đằng, Phước Ninh, Q. Hải Châu, Đà Nẵng',
+      type: 'Café and Desserts',
+      imageSrc: 'images/common-space/7.jpg',
+      lat: 16.065548,
+      lng: 108.224298
+    },{
+      name: 'On The Radio Bar (Live Music)',
+      lcation: '35 Thái Phiên, Phước Ninh, Q. Hải Châu, Đà Nẵng',
+      type: 'Bars, Pubs, and Night Clubs',
+      imageSrc: 'images/common-space/8.jpg',
+      lat: 16.064932,
+      lng: 108.222505
+    },{
+      name: 'Luna Pub (Italian and Western)',
+      lcation: '9 Trần Phú, Thạch Thang, Hải Châu, Đà Nẵng',
+      type: 'Bars, Pubs, and Night Clubs',
+      imageSrc: 'images/common-space/9.jpg',
+      lat: 16.079795,
+      lng: 108.223106
+    },{
+      name: 'Bamboo 2 Bar',
+      lcation: '216 Bạch Đằng, Phước Ninh, Hải Châu, Đà Nẵng',
+      type: 'Bars, Pubs, and Night Clubs',
+      imageSrc: 'images/common-space/10.jpg',
+      lat: 16.064929,
+      lng:  108.224094
+    },{
+      name: 'Golden Pine Pub ',
+      lcation: '52 Bạch Đằng, Hải Châu 1, Thanh Khê, Đà Nẵng',
+      type: 'Bars, Pubs, and Night Clubs',
+      imageSrc: 'images/common-space/11.jpg',
+      lat: 16.072600,
+      lng:  108.224754
+    },{
+      name: 'New Phuong Dong Club (Da Nang’s Hottest Night Club)',
+      lcation: '20 Đống Đa, Thuận Phước, Hải Châu, Đà Nẵng',
+      type: 'Bars, Pubs, and Night Clubs',
+      imageSrc: 'images/common-space/12.jpg',
+      lat: 16.082578,
+      lng: 108.221135
+    },{
+      name: 'Ala Carte Hotel (Rooftop) ',
+      lcation: 'Corner of Vo Nguyen Giap Street & Duong Dinh Nghe Street, Sơn Trà, Đà Nẵng ',
+      type: 'Lounge & Views ',
+      imageSrc: 'images/common-space/13.jpg',
+      lat: 16.068779,
+      lng: 108.244900
+    },{
+      name: 'Novotel Hotel (Rooftop ~ Sky36 Bar)',
+      lcation: '36, Đường Bạch Đằng, Phường Thạch Thang, Quận Hải Châu, Đà Nẵng',
+      type: 'Lounge & Views ',
+      imageSrc: 'images/common-space/14.jpg',
+      lat: 16.077902,
+      lng: 108.224613
+    }];
     function initMap() {
+
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: initCenter,
+        center:  new google.maps.LatLng($scope.address[0].lat, $scope.address[0].lng),
         zoom: 15,
         styles: styleMap
       });
 
-        $scope.homes.map(function (markerData, i) {
+        $scope.address.map(function (markerData, i) {
           var latLng = new google.maps.LatLng(markerData.lat, markerData.lng);
           marker = new google.maps.Marker({
             position: latLng,
@@ -181,6 +256,7 @@ angular
         });
 
     }
+    initMap();
 
 
   });

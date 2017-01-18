@@ -11,6 +11,10 @@ angular
 	          'home_header@home':{
 	            templateUrl: 'modules/index/views/home_header.html'
 	          },
+            'home_intro@home': {
+              templateUrl: 'modules/index/views/home_intro.html',
+              controller: 'index'
+            },
 	          'home_slide@home': {
 	            templateUrl: 'modules/index/views/home_slide.html',
 	            controller: 'index'

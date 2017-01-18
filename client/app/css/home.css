@@ -1,0 +1,90 @@
+/* Feature */
+.feature-main li .thumbnail-kenburn {
+  padding: 5px;
+  margin-top: 30px;
+}
+.overflow-hidden:before, .overflow-hidden:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 22%;
+  height: 100%;
+  z-index: 1;
+}
+.feature-main li p {
+  font-size: 1.7142857143em;
+}
+.thumbnail-style {
+  height: 262px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.thumbnail-style:hover{
+  box-shadow: 0 0 8px #ddd;
+}
+
+.thumbnail-style h3 a:hover {
+  color: #ff1940;
+  text-decoration: none;
+}
+.thumbnail-style a.btn-booking{
+  position: absolute;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ff1940;
+  color: #ffffff;
+  opacity: 0;
+  top: 30%;
+  left: 40%;
+  background: #ff1940;
+  font-weight: 600;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.thumbnail-style:hover a.btn-booking{
+  opacity: 1;
+  top: 40%!important;
+}
+
+
+.thumbnail-style {
+  padding: 7px;
+  margin-bottom: 30px;
+}
+.thumbnail-style .thumbnail-img {
+  position: relative;
+}
+.thumbnail-kenburn:hover img {
+  transform: scale(1.2) rotate(2deg);
+  opacity: 0.5;
+}
+.thumbnail-kenburn:hover .thumbnail-img{
+  background: black;
+}
+.thumbnail h3 a:hover,
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.thumbnail-kenburn img {
+  position: relative;
+  transition: all 0.8s ease;
+  width: 100%;
+}
+.hover-effect {
+  transition: all 0.4s ease-in-out;
+}
+.thumbnail-style h3 {
+  margin: 6px 0 8px 0;
+}
+.thumbnail-style h3 a {
+  color: #585f69;
+  font-size: 18px;
+}
+.hover-effect {
+  transition: all 0.4s ease-in-out;
+}
+.thumbnail-img, .overflow-hidden, .img-responsive {
+  height: 100%;
+}

@@ -51,7 +51,8 @@
       'com.module.index',
       'com.module.onetrip',
       'com.module.room',
-      'com.module.homes'
+      'com.module.homes',
+      'com.module.hotAddress'
 
     ])
     .run(function ($rootScope, $cookies, gettextCatalog) {

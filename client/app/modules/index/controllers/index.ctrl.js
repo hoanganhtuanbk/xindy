@@ -52,13 +52,13 @@ angular
       {
         image: 'https://a0.muscache.com/im/pictures/3200aec5-2196-46a0-880a-d36353b1e1a2.jpg?aki_policy=profile_medium',
         id: 2,
-        name: 'Yang',
+        name: 'Pip',
         content: "It might've rained the entire duration of our stay in da nang but we enjoyed the entirety of our time. This was due to our host Tai. His place was a fantastic base, but Tai himself was such an asset. Helpful and friendly, a straight-up awesome dude. Highly recommended! A+"
       },
       {
         image: 'https://a0.muscache.com/im/pictures/a617577a-bf43-461c-bcc0-deed33e08079.jpg?aki_policy=profile_medium',
         id: 3,
-        name: 'Pip',
+        name: 'Yang',
         content: 'Tai is a handsome ,warmhearted, considered host. With his kindness help, we have great time here! His house is beautiful and comfortable ~Though the house is not very near to the central city, but its convenient to take a taxi~ anytime, if u have problems in da nang ... ask Tai! :))'
       },
       {

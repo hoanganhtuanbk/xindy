@@ -13,17 +13,21 @@
 }
 .home-header{
   background: white!important;
+  border-bottom: 1px solid #dadada;
+
 }
 .home-header li {
-  color: #b7335f!important;
+  color: #333!important;
+  font-weight: 300!important;
+
 }
 .room-header {
-  border-bottom: 1px solid rgba(67, 83, 86, 0.18);
+  border-bottom: 1px solid #dadada;
   background: white!important;
 }
 .room-header li {
   color: #b7335f!important;
-  font-weight: 500!important;
+  font-weight: 300!important;
 }
 
 .global-nav ul {

@@ -19,9 +19,11 @@
 }
 .room-header {
   border-bottom: 1px solid rgba(67, 83, 86, 0.18);
+  background: white!important;
 }
 .room-header li {
   color: #b7335f!important;
+  font-weight: 500!important;
 }
 
 .global-nav ul {
@@ -33,7 +35,7 @@
 
 .global-nav li {
   font-size: 17px;
-  color: #fff0ff;
+  color: white;
   font-weight: 600;
   margin-top: 6px;
   padding-left: 15px;

@@ -171,7 +171,8 @@ angular
       var map = new google.maps.Map(document.getElementById('map'), {
         center:  new google.maps.LatLng($scope.address[0].lat, $scope.address[0].lng),
         zoom: 15,
-        styles: styleMap
+        styles: styleMap,
+
       });
 
         $scope.address.map(function (markerData, i) {
@@ -257,18 +258,6 @@ angular
 
     }
     initMap();
-    $scope.changeStyle = false;
-    $(window).scroll(function(){
-      if($(document).scrollTop() > 20)
-      {
-        $scope.changeStyle = true;
-        console.log(1)
-      }
-      else
-      {
-        $scope.changeStyle = false
-      }
-    });
 
   });
 

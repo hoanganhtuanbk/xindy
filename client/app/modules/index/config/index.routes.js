@@ -7,7 +7,9 @@ angular
       	.state('home', {
         	url: '/',
 	        views:{
-	          '':{templateUrl :'modules/index/views/home.html'},
+	          '':{templateUrl :'modules/index/views/home.html',
+              controller: 'index'
+            },
 	          'home_header@home':{
 	            templateUrl: 'modules/index/views/home_header.html'
 	          },

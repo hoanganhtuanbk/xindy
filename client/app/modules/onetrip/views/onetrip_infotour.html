@@ -1,11 +1,11 @@
-<div carousel class="cover-container" no-transition="false" active="active" interval="myInterval" no-wrap="noWrapSlides">
-  <div slide ng-repeat="slide in slides track by slide.id" class="cover cover-bg" index="slide.id" ng-style="{'height': '550px','background-image': 'url({{slide.urlImage}})'}">
-      <div class="va-container">
-        <div class="va-middle text-center">
-          <h1 class="cover-heading text-uppercase large">THE REAL TRIP</h1>
-          <a href="/explore/hoi-an" class="cover-button text-uppercase btn-christinas">Book Onetrip</a>
-        </div>
-      </div>
+<div carousel class="cover-container" interval="myInterval" no-pause="true">
+  <div slide ng-repeat="slide in slides track by slide.id" class="cover" index="slide.id" ng-style="{'height': '650px','background-image': 'url({{slide.urlImage}})','background-size': 'cover'}">
+
+  </div>
+  <div class="va-container">
+    <div class="va-middle text-center">
+      <h1 class="cover-heading text-uppercase large">Home is where<br>the hearts are...</h1>
+      <a href="/explore/hoi-an" class="cover-button text-uppercase btn-christinas"><span>Book with us</span></a>
+    </div>
   </div>
 </div>
-

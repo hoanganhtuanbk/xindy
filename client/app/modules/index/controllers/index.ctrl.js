@@ -20,8 +20,17 @@ angular
       });
     }
     getImage();
-
-
+    $scope.changeStyle = false;
+    $(window).scroll(function(){
+      if($(document).scrollTop() > 200)
+      {
+        $scope.changeStyle = true;
+      }
+      else
+      {
+        $scope.changeStyle = false
+      }
+    });
   })
   .controller('slideCtrl', function ($scope) {
     $scope.myInterval = 5000;

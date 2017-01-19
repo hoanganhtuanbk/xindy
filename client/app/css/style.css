@@ -5,9 +5,17 @@
   padding-top: 10px;
 }
 .global-nav {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  z-index: 100;
   background: inherit;
+  width: 100%;
+  top: 0
+}
+.home-header{
+  background: white!important;
+}
+.home-header li {
+  color: #b7335f!important;
 }
 .room-header {
   border-bottom: 1px solid rgba(67, 83, 86, 0.18);
@@ -33,7 +41,10 @@
   float: right;
 
 }
-.global-nav li a {
+.global-nav li a:hover{
+  text-decoration: underline;
+}
+ .global-nav li a {
   display: inline-block;
 }
 a, a:hover, a:visited {
@@ -365,8 +376,6 @@ footer .copy {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  min-width: auto;
-  min-height: auto;
   display: inline-block;
 }
 .review-date {

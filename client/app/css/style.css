@@ -7,27 +7,23 @@
 .global-nav {
   position: fixed;
   z-index: 100;
-  background: inherit;
   width: 100%;
-  top: 0
+  top: 0;
+  background: white;
+
 }
 .home-header{
-  background: white!important;
   border-bottom: 1px solid #dadada;
 
 }
 .home-header li {
-  color: #333!important;
-  font-weight: 300!important;
 
 }
 .room-header {
   border-bottom: 1px solid #dadada;
-  background: white!important;
 }
 .room-header li {
-  color: #b7335f!important;
-  font-weight: 300!important;
+
 }
 
 .global-nav ul {
@@ -35,12 +31,13 @@
   width: 100%;
   display: inline-block;
   padding-left: 0;
+
 }
 
 .global-nav li {
-  font-size: 17px;
-  color: white;
-  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  font-weight: 300;
   margin-top: 6px;
   padding-left: 15px;
   padding-right: 15px;

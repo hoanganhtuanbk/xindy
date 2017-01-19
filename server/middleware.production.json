@@ -2,6 +2,9 @@
   "files": {
     "loopback#static": {
       "params": "$!../dist"
+    },
+    "loopback#favicon": {
+      "params": "$!../client/app/images/logo-xindy.png"
     }
   },
   "final:after": {

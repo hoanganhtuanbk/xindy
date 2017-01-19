@@ -41,5 +41,25 @@ angular
               templateUrl: 'modules/index/views/home_footer.html',
               controller: 'footerCtrl'
             }
+        }})
+      .state('about', {
+        url: '/about',
+        views:{
+          '':{templateUrl :'modules/index/views/about/about.html'},
+          'about_header@about':{
+            templateUrl: 'modules/index/views/home_header.html'
+          },
+          'about_banner@about': {
+            templateUrl: 'modules/index/views/about/about_banner.html',
+            controller: ''
+          },
+          'about_main@about': {
+            templateUrl: 'modules/index/views/about/about_main.html',
+            controller: ''
+          },
+          'about_footer@about': {
+            templateUrl: 'modules/index/views/home_footer.html',
+            controller: ''
+          }
         }});
   });

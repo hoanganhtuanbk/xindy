@@ -7,6 +7,9 @@ module.exports = function(app) {
   app.get('/address', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });
+  app.get('/about', function(req, res) {
+    res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
+  });
   app.get('/address/*', function(req, res) {
     res.sendFile(require('path').join(__dirname + '/../../dist/index.html'))
   });

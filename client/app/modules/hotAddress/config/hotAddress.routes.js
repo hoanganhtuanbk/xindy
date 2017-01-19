@@ -24,4 +24,5 @@ angular
               controller: 'footerCtrl'
             }
         }});
+
   });

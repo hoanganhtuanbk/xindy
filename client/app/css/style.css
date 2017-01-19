@@ -570,3 +570,13 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   color: black;
 }
 /* */
+.about-banner{
+  /*height: 500px;*/
+}
+.about-banner img{
+  width: 100%;
+}
+.text-content {
+  max-width: 700px;
+  margin: auto;
+}

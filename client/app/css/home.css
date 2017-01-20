@@ -85,6 +85,6 @@
 .hover-effect {
   transition: all 0.4s ease-in-out;
 }
-/*.thumbnail-img, .overflow-hidden, .img-responsive {*/
-  /*height: 100%;*/
-/*}*/
+.thumbnail-img, .overflow-hidden, .img-responsive {
+  height: 100%;
+}

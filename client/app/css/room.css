@@ -116,14 +116,27 @@
 }
 
 .get-discount {
-  background: #31353e url(images/onetrip/discount.jpg) no-repeat 50% 0 / cover;
+  background: #31353e url(/images/onetrip/discount.jpg) no-repeat 50% 0 / cover !important;
   position: relative;
   color: rgba(255,255,255,.8);
   padding: 100px 0;
 }
+.get-discount:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  position: absolute;
+  background: rgba(0,0,0,.6);
+}
 .get-discount h2, .get-discount .h2 {
   font-size: 56px;
   color: #fff;
+}
+.get-discount .container {
+  z-index: 1;
+  position: relative;
 }
 .get-discount h2 strong, .get-discount .h2 strong {
   color: #e74c3c;
@@ -194,4 +207,7 @@ label {
 .btn-u-lg, a.btn-u-lg {
   font-size: 18px;
   padding: 10px 25px;
+}
+.popular-tours-item .img-responsive{
+  height: auto;
 }

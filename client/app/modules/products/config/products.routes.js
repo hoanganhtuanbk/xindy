@@ -43,9 +43,11 @@
               ]
             });
             this.submit = function () {
-              this.product.urlImage = CoreService.env.apiUrl+'containers/files/download/'+  this.uploader.queue[0].file.name;
+              if(this.uploader.queue[0]){
+                this.product.urlImage = CoreService.env.apiUrl+'containers/files/download/'+  this.uploader.queue[0].file.name;
+
+              }
               ProductsService.upsertProduct(this.product).then(function (result) {
-                console.log(result)
                 $state.go('^.list');
               });
             };
@@ -65,12 +67,24 @@
           url: '/:productId/edit',
           templateUrl: 'modules/products/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, ProductsService, categories, product) {
+          controller: function ($state, ProductsService,FileUploader,CoreService, categories, product) {
             this.categories = categories;
             this.product = product;
             this.formFields = ProductsService.getFormFields(categories);
             this.formOptions = {};
+            this.uploader = new FileUploader({
+              url: CoreService.env.apiUrl + 'containers/files/upload',
+              formData: [
+                {
+                  key: 'value'
+                }
+              ]
+            });
             this.submit = function () {
+              if(this.uploader.queue[0]){
+                this.product.urlImage = CoreService.env.apiUrl+'containers/files/download/'+  this.uploader.queue[0].file.name;
+              }
+
               ProductsService.upsertProduct(this.product).then(function () {
                 $state.go('^.list');
               });

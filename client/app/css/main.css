@@ -7,7 +7,13 @@
 .ui-view-container {
   position: relative;
 }
-
+h3 {
+  font-size: 20px;
+  line-height: 27px;
+}
+h4 {
+  line-height: 25px;
+}
 [ui-view].ng-enter, [ui-view].ng-leave {
   /*position: absolute;*/
   /*left: 0;*/

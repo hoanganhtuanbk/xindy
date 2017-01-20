@@ -38,6 +38,7 @@
       'gettext',
       'angular-underscore/filters',
       'schemaForm',
+      'slickCarousel',
       'ui.select',
       'com.module.core',
       'com.module.about',

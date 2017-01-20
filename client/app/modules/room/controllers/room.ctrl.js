@@ -115,7 +115,7 @@ angular
               fillOpacity: 0.35,
               map: map,
               center: latLng,
-              radius: 100
+              radius: 300
             });
           var infowindow = new google.maps.InfoWindow({
             content: '<div id="iw-container" ><div class="iw-title"><p>'+markerData.name+'</p></div>'+

@@ -408,8 +408,11 @@ footer .copy {
   line-height: 20px;
   min-width: 150px;
 }
-.rating-wr {
-  margin: 20px 0;
+.rating {
+  padding-left: 5px;
+}
+.rating img{
+  height: 20px;
 }
 .stars, .stars .rated-stars, .star-field-rated {
   background: url('/images/rank/star.png') 0 -16px repeat-x;

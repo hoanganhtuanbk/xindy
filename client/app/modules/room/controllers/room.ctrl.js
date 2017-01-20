@@ -95,18 +95,28 @@ angular
     function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
         center: initCenter,
-        zoom: 15,
+        zoom: 14,
         styles: styleMap
       });
 
         $scope.homes.map(function (markerData, i) {
           var latLng = new google.maps.LatLng(markerData.lat, markerData.lng);
-          marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            icon: 'images/home.png'
-          });
-
+          // marker = new google.maps.Marker({
+          //   position: latLng,
+          //   map: map,
+          //   icon: 'images/home.png'
+          // });
+            // Add the circle for this city to the map.
+            var cityCircle = new google.maps.Circle({
+              strokeColor: '#e50b95',
+              strokeOpacity: 0.5,
+              strokeWeight: 2,
+              fillColor: 'rgba(229, 11, 149, 0.29)',
+              fillOpacity: 0.35,
+              map: map,
+              center: latLng,
+              radius: 100
+            });
           var infowindow = new google.maps.InfoWindow({
             content: '<div id="iw-container" ><div class="iw-title"><p>'+markerData.name+'</p></div>'+
             '<img  class="iw-img" src="' + markerData.imageSrc + '" /></div>',

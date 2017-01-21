@@ -1,7 +1,7 @@
 {
   "initial:before": {
     "loopback#favicon": {
-      "params": "$!../client/app/images/logo-xindy.png"
+      "params": "$!../client/app/images/sub-logo.png"
     }
   },
   "initial": {

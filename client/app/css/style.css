@@ -69,6 +69,70 @@ a, a:hover, a:visited {
   position: relative;
   height: 700px;
 }
+
+.cover-container .cover-heading{
+  position: absolute;
+  left: 14%;
+  animation: myAnimation 3s ease 1;
+  -moz-animation: myAnimation 3s ease 1;
+  -webkit-animation: myAnimation 3s ease 1;
+  -o-animation: myAnimation 3s ease 1;
+}
+@keyframes myAnimation {
+  from {left: -72%;}
+  to {left: 14%;}
+}
+
+/* Hien thi cho Firefox */
+@-moz-keyframes myAnimation {
+  from {left: -72%;}
+  to {left: 14%;}
+}
+
+/* Hien thi cho Safari and Chrome */
+@-webkit-keyframes myAnimation {
+  from {left: -72%;}
+  to {left: 14%;}
+}
+
+/* Hien thi cho Opera */
+@-o-keyframes myAnimation {
+  from {left: -72%;}
+  to {left: 14%;}
+}
+
+
+.cover-container .cover-button{
+  position: absolute;
+  top: 180px;
+  left: 43%;
+  animation: buttonCover 2s ease 1;
+  -moz-animation: buttonCover 2s ease 1;
+  -webkit-animation: buttonCover 2s ease 1;
+  -o-animation: buttonCover 2s ease 1;
+}
+@keyframes buttonCover {
+  from {top: 350px;}
+  to {top: 180px}
+}
+
+ /*Hien thi cho Firefox */
+@-moz-keyframes buttonCover {
+  from {top: 350px;}
+  to {top: 180px}
+}
+
+/* Hien thi cho Safari and Chrome */
+@-webkit-keyframes buttonCover {
+  from {top: 350px;}
+  to {top: 180px}
+}
+
+/* Hien thi cho Opera */
+@-o-keyframes buttonCover {
+  from {top: 350px;}
+  to {top: 180px}
+}
 .cover {
   position: absolute;
   top: 0;

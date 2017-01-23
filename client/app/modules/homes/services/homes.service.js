@@ -70,22 +70,22 @@
               required: true
             }
           },
-          {
-            key: 'zone',
-            type: 'select',
-            templateOptions: {
-              label: gettextCatalog.getString('Zone'),
-              required: true,
-              options: [{
-                name: 'Da Nang',
-                value: 'DN'
-              },
-                {
-                  name:'Hoi An',
-                  value: 'HA'
-                }]
-            }
-          },
+          // {
+          //   key: 'zone',
+          //   type: 'select',
+          //   templateOptions: {
+          //     label: gettextCatalog.getString('Zone'),
+          //     required: true,
+          //     options: [{
+          //       name: 'Da Nang',
+          //       value: 'DN'
+          //     },
+          //       {
+          //         name:'Hoi An',
+          //         value: 'HA'
+          //       }]
+          //   }
+          // },
           {
             key: 'price',
             type: 'input',
@@ -125,21 +125,21 @@
               label: gettextCatalog.getString('Lat')
             }
           },
-          {
-            key: 'startDate',
-            type: 'datepicker',
-            templateOptions: {
-              label: gettextCatalog.getString('Start Time')
-            }
-          },
-          {
-            key: 'endDate',
-            type: 'datepicker',
-            templateOptions: {
-              label: gettextCatalog.getString('End Date'),
-              required: true
-            }
-          }
+          // {
+          //   key: 'startDate',
+          //   type: 'datepicker',
+          //   templateOptions: {
+          //     label: gettextCatalog.getString('Start Time')
+          //   }
+          // },
+          // {
+          //   key: 'endDate',
+          //   type: 'datepicker',
+          //   templateOptions: {
+          //     label: gettextCatalog.getString('End Date'),
+          //     required: true
+          //   }
+          // }
         ];
       };
 

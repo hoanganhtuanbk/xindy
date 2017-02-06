@@ -1,0 +1,62 @@
+<div carousel class="cover-container" interval="myInterval" no-pause="true">
+  <div slide ng-repeat="slide in slides track by slide.id" class="cover" index="slide.id" ng-style="{'height': '700px','background-image': 'url({{slide.urlImage}})','background-size': 'cover'}">
+
+  </div>
+  <div class="va-container">
+    <div class="va-middle text-center">
+      <h1 style="font-size: 30px" class="cover-heading text-uppercase large"><span style="font-size: 55px">Welcome to Central Vietnam</span><br>Home is where we gather...</h1>
+      <a href="/rooms/search" class="cover-button text-uppercase btn-christinas" style="background-color: #ee4136"><span>Book Now</span></a>
+    </div>
+  </div>
+</div>
+<div class="search-tours g-heading-v8">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 search-tours-title-wrapper">
+        <div class="container">
+          <h2><em class="block-name">Book Information</em><br> Tour's search</h2>
+        </div>
+      </div>
+      <div class="col-md-9 search-tours-col-bg-default">
+        <div class="container">
+          <form action="#" class="sky-form clearfix">
+            <div class="col col-3">
+              <label class="label">Destination</label>
+              <label class="select">
+                <select>
+                  <option value="0" selected="">Reservation date</option>
+                  <option value="1">Department 1</option>
+                  <option value="2">Department 2</option>
+                  <option value="3">Department 3</option>
+                  <option value="4">Department 4</option>
+                </select>
+                <i></i>
+              </label>
+            </div>
+
+            <div class="col col-3">
+              <label class="label">Date</label>
+              <label class="input">
+                <datepicker ng-show="popup1" ng-model="dt" class="calenderDatepicker" ng-mouseleave="open1()"></datepicker>
+                <span class="icon-append fa fa-calendar" ng-click="open1()"></span>
+                <input type="text" class="hasDatepicker" ng-model="dt" />
+              </label>
+            </div>
+
+            <div class="col col-3">
+              <label class="label">Persons</label>
+              <label class="input">
+                <span class="icon-append fa fa-users"></span>
+                <input type="text" placeholder="Number of persons">
+              </label>
+            </div>
+
+            <div class="col col-3">
+              <button type="submit" class="btn-u btn-u-lg btn-u-upper">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

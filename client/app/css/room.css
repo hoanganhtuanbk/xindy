@@ -231,7 +231,7 @@ label {
 }
 
 
-/* ss3 */
+/* service */
 
 .our-service-section .container-fluid {
   padding: 0;
@@ -366,4 +366,151 @@ label {
 }
 .ms-staff-carousel .ms-staff-info {
   padding: 50px 30px 50px;
+}
+
+/*  TOUR'S SEARCH */
+/* Search Tours Section */
+.search-tours {
+  position: relative;
+}
+.search-tours:before,
+.search-tours:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 1;
+}
+.search-tours:before {
+  left: 0;
+  background: #31353e;
+}
+.search-tours:after {
+  right: 0;
+  background: #ee4136;
+}
+.search-tours .container {
+  z-index: 2;
+  position: relative;
+}
+.search-tours .sky-form {
+  box-shadow: none;
+  color: #fff;
+}
+.search-tours h2,
+.search-tours .h2 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 0;
+}
+.search-tours h2 .block-name,
+.search-tours .h2 .block-name {
+  font-size: 11px;
+  padding: 0;
+  margin-bottom: 0;
+  color: #ee4136;
+}
+.search-tours-title-wrapper {
+  background: #31353e;
+  padding-top: 52px;
+  padding-bottom: 64px;
+}
+.search-tours-col-bg-default {
+  background: #ee4136;
+  padding-top: 65px;
+  padding-bottom: 41px;
+}
+.search-tours .sky-form .label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.search-tours .sky-form .btn-u {
+  margin-top: 34px;
+  background: #31353e;
+}
+.search-tours .sky-form .btn-u:hover {
+  background: #1c1e24;
+}
+.search-tours .sky-form .input input,
+.search-tours .sky-form .select select,
+.search-tours .sky-form .textarea textarea {
+  background: #d43c31;
+  box-shadow: 0 0 3px #ca352b inset;
+  color: #fff;
+  border: none;
+}
+.search-tours .sky-form .select select {
+  color: #fff;
+}
+.search-tours ::-webkit-input-placeholder {color: #fff; opacity: 1;}
+.search-tours ::-moz-placeholder {color: #fff; opacity: 1;} /* Firefox 19+ */
+.search-tours :-moz-placeholder {color: #fff; opacity: 1;} /* Firefox 18- */
+.search-tours :-ms-input-placeholder {color: #fff; opacity: 1;}
+
+.search-tours .sky-form .icon-append {
+  border: none;
+  color: #fff;
+}
+.search-tours .sky-form .select i {
+  width: auto;
+  height: auto;
+  background: none;
+}
+.search-tours .sky-form .select i:before {
+  display: none;
+}
+.search-tours .sky-form .select i:after {
+  border-top: 4px solid #fff;
+  top: 17px;
+}
+@media (min-width: 992px) {
+  .search-tours-title-wrapper > .container,
+  .search-tours-col-bg-default > .container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 991px) {
+  .search-tours:before,
+  .search-tours:after {
+    display: none;
+  }
+  .search-tours > .container {
+    width: 100%;
+  }
+  .sky-form .col {
+    padding-left: 0 !important;
+    padding-right: 30px !important;
+  }
+  .search-tours-title-wrapper {
+    padding-top: 22px;
+    padding-bottom: 34px;
+  }
+  @media (max-width: 500px) {
+    .g-heading-v8 h2, .g-heading-v8 .h2 {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.calenderDatepicker{
+  position: absolute;
+  background: #ee4136;
+  z-index: 1;
+  top: 40px;
+}
+.calenderDatepicker .btn-default {
+  background-color: initial!important;
+  color: #fff!important;
+  border: none;
+}
+.calenderDatepicker .btn-default:hover {
+  background-color: initial!important;
+  color: #fff!important;
 }

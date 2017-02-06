@@ -30,6 +30,15 @@ angular
       {
         $scope.changeStyle = false
       }
+      if ($(window).scrollTop() > 180) {
+        $('.feature-item').addClass('factive');
+        $('.feature-item').removeClass('noactive');
+
+      }
+      else {
+        $('.feature-item').addClass('noactive');
+        $('.feature-item').removeClass('factive');
+      }
     });
   })
   .controller('slideCtrl', function ($scope) {

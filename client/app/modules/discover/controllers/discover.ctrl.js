@@ -1,10 +1,7 @@
 'use strict';
 angular
-  .module('com.module.onetrip')
-  .controller('onetrip', function () {
-
-  })
-  .controller('TripCtrl', function ($scope,Category) {
+  .module('com.module.discover')
+  .controller('discover', function ($scope,Category) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
@@ -24,8 +21,33 @@ angular
       $scope.slides = result.products
     });
 
-})
-  .controller('reviewOnetripCtrl', function ($scope) {
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+
+    $scope.today = function() {
+      $scope.dt = new Date();
+    };
+    $scope.today();
+    $scope.open1 = function() {
+      $scope.popup1 = !$scope.popup1;
+    };
+    $scope.popup1 = false;
+    $scope.dateOptions = {
+      dateDisabled: disabled,
+      formatYear: 'yy',
+      maxDate: new Date(2020, 5, 22),
+      minDate: new Date(),
+      startingDay: 1
+    };
+    function disabled(data) {
+      var date = data.date,
+        mode = data.mode;
+      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    }
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+  })
+  .controller('reviewDiscoverCtrl', function ($scope) {
 
     $scope.number = [{label: 1,url: '/images/onetrip/1.jpg'},
       {label: 2,url: '/images/onetrip/2.jpg'},
@@ -45,7 +67,6 @@ angular
 
         },
         afterChange: function (event, slick, currentSlide, nextSlide) {
-          console.log(currentSlide);
           if(currentSlide < 4){
             $scope.reviewActive = currentSlide + 3
           } else if (currentSlide == 4) {
@@ -61,10 +82,11 @@ angular
 
   .controller('detail', function ($scope,$stateParams,Tour){
     $scope.data = {};
+    console.log($stateParams.location);
     Tour.findOne({
       filter:{
         where:{
-          title: $stateParams.text
+          title: $stateParams.location
         }
       }
 

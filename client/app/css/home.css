@@ -88,3 +88,14 @@
 .thumbnail-img, .overflow-hidden, .img-responsive {
   height: 100%;
 }
+.feature-item{
+  transition: all 2s;
+}
+.factive {
+  opacity: 1;
+  transform: perspective(900px) rotateY(0deg) translate3d(0,0,0);
+}
+.noactive {
+  opacity: 0;
+  transform: perspective(900px) rotateY(-80deg) translate3d(0,0px,-110px);
+}

@@ -50,7 +50,7 @@
       'com.module.settings',
       'com.module.users',
       'com.module.index',
-      'com.module.onetrip',
+      'com.module.discover',
       'com.module.room',
       'com.module.homes',
       'com.module.hotAddress'

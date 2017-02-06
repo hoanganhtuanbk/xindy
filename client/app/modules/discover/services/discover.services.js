@@ -1,6 +1,6 @@
 'use strict';
 angular
-  .module('com.module.onetrip')
+  .module('com.module.discover')
   .service('CountryData', function() {
 
   });
